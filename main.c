@@ -185,9 +185,9 @@ int removeRange(List* list, int startIndex, int length){
         list->arr[i] = 0;
     }
     list->index -= length;
-    /*if(list->index == (list->size / 2) - 1){
+    if(list->index == (list->size / 2) - 1){
         resizing(list,Collapse);
-    }*/
+    }
 }
 
 void clear(List* list){
@@ -269,8 +269,7 @@ void forEach(List* list, Action action){
 
 void printList(List* list){
     printf("List:\n");
-    //TODO: list->size olan kısımı daha sonra list->index yapıcam
-    for (int i = 0; i < list->size; ++i) {
+    for (int i = 0; i < list->index; ++i) {
         printf("%d", list->arr[i]);
         printf("\n");
     }
